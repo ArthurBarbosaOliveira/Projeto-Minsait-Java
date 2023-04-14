@@ -59,5 +59,5 @@ Este comando irá criar uma imagem docker com o nome `emprestimo-v1` e executar 
 
 ## Informações de contato
 
-Caso tenha alguma dúvida, sugestão ou crítica, entre em contato comigo pelo [email](mailto:anderson.higo2@gmail.com)
-ou pelo [LinkedIn](https://www.linkedin.com/in/andersonhsporto/).
+Caso tenha alguma dúvida, sugestão ou crítica, entre em contato comigo pelo [email](mailto:arthurbarbosa93@gmail.com)
+ou pelo [LinkedIn](https://www.linkedin.com/in/arthurbarbosaoliveira/).
