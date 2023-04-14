@@ -1,136 +1,63 @@
-# :bank: Boas vindas ao meu repositório do Projeto-Minsait-Java!! :rocket:
- <summary>
-    <strong>👨‍💻 O que deverá ser desenvolvido</strong>
- </summary><br>
-Neste projeto, eu desenvolvi um App Rest para gerenciamento de um banco para cadastramento de clientes e empréstimos.  .
+# Emprestimo Home
 
-# :bar_chart: Tecnologias Utilizadas
+## Decrição
 
-* [JAVA 8](https://www.java.com/pt-BR/) - Linguagem de programação (JDK 1.8).
-* [Spring](https://spring.io/projects/spring-boot) - Framework MVC.
-* [Apache Maven 3.8.6](https://maven.apache.org/) - Gerenciador de dependências.
-* [IntelliJ](https://www.jetbrains.com/idea/) - IDE para desenvolvimento.
-* [Docker](https://www.docker.com/) - Serviço de virtualização.
-* [H2 Database](https://www.h2database.com/html/main.html) - Banco de dados relacional escrito em Java que funciona em memória.
+Projeto de cadastro e visualização de clientes e empréstimos.<br>
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 15.2.4.<br>
 
+### Funcionalidades
 
-<summary>
-    <strong> ⚠️ Configurações mínimas para execução do projeto</strong>
-</summary><br />
+- Cadastro de clientes
+- Edição de clientes
+- Exclusão de clientes
 
-Para Executar o projeto.
-
-  1. Clone o repositório `Usar link SSH`
-
-- Entre na pasta do repositório que você acabou de clonar:
-  * `cd pasta-do-repositório`
-
-  2. Instale as dependências [**Caso existam**]
-  *`npm install`
-
-  3. Importe ele como um Project-Maven e execute com o Rune As - Java Application, ou faça o Rune As no com.financiamento/API - ApiApplication.java. 
-
-Na sua máquina você deve ter 
-
-- O `JDK` deve ter versão igual `1.8`
-- O `Maven` 
-- E uma `IDE` ou editor de sua preferência.
+Este projeto foi desenvolvido para utilizar como backend o 
+[emprestimo-api](https://github.com/andersonhsporto/emprestimo-api) 
+e utiliza a rota local http://localhost:8080 para acessar este.
 
 
- <summary>
-    <strong>👷 Estruturação do projeto</strong>
- </summary><br>
+## Tecnologias
 
-  Para facilitar o entendimento, podemos dividir a aplicação em **2 Fluxos principais**,
+- [Angular](https://angular.io/) - Framework para desenvolvimento de aplicações web
+- [Typescript](https://www.typescriptlang.org/) - Superset do Javascript
+- [Bootstrap](https://getbootstrap.com/) - Framework para desenvolvimento de aplicações web
+- [Ngx-currency](https://www.npmjs.com/package/ngx-currency) - Biblioteca para formatação de moeda
+- [Sweetalert2](https://sweetalert2.github.io/) - Biblioteca para criação de alertas
 
-- **Fluxo Cliente** que compreende:
+## Instalação
 
-  - (1) Cadastrar um cliente, `POST` onde o `BODY` séria:
-  
-```bash
-    `api/v1/financiamento/clientes`
-```
+Execute `npm install` para instalar as dependências do projeto.
 
-```json
-{
-    "nome": "Arthur Barbosa Oliveira",
-     "cpf": "66114269063",
-     "email": "arthurbarbosa@gmail.com",
-     "telefone": "(11) 92122-5678",
-     "rua": "Rua Creusa",
-     "numero": "30",
-     "cep": "58077-567",
-     "rendaMensal": 90000.0
-}
-```
+## Servidor de desenvolvimento
 
-  - (2) Obter dados dos Clientes `GET`:
-  
-  ```bash
-      `api/v1/financiamento/clientes`
-  ```
-  
-  - (3) Obter os dados de um Cliente com o CPF:
-  
-  ```bash
-      `api/v1/financiamento/clientes/{cpf}`
-  ```
-  
-  - (4) Apaga um cliente `DELET`: 
-  
-  ```bash
-      `api/v1/financiamento/clientes/{cpf}`
-  ```
-  
-  - (5) Atualizar os dados de um cliente `PUT`:
-  
-  ```bash   
-      `api/v1/financiamento/clientes/{cpf}`
-  ```
+Execute `ng serve` para um servidor de desenvolvimento. Navegue para `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar qualquer um dos arquivos de origem.
 
-- **Fluxo do Empréstimos** que compreende:
+## Gerando código
 
-  - (1) Cadastrar um empréstimo, `POST` onde o `BODY` séria:
-  
-  ```bash
-      `/api/v1/clientes/{cpf}/emprestimos`
-  ```
-  
-```json
-{
-    "cpfCliente": "66114269063",
-    "valorInicial": 100.00,
-    "dataEmprestimo": "2017-01-13",
-    "tipoRelacionamento": "OURO"
-}
-```
+Execute `ng generate component component-name` para gerar um novo componente. Você também pode usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-  - (2) Apaga os dados de um empréstimo `DELET`:
-  
-```bash  
-    `/api/v1/clientes/{cpf}/emprestimos`
-```
+## Build
 
-  - (3) Retornar os dados de um empréstimo `GET`:
-  
-```bash  
-    `/api/v1/clientes/{cpf}/emprestimos/{id}`
-```
+Execute `ng build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`.
 
-  - (4) Obter a lista dos empréstimos do cliente `GET`:
-  
-```bash  
-    `/api/v1/clientes/{cpf}/emprestimos`
-```
+## Executando testes de unidade
 
-- ⚠️ **Importante** ⚠️:
-  As dependências são declaradas no arquivo [pom.xml]
+Execute `ng test` para executar os testes de unidade via [Karma](https://karma-runner.github.io).
 
- <summary>
-    <strong>👨‍💻 Informações de contato</strong>
- </summary><br>
+## Executando testes ponta a ponta
 
-- Seja bem vindo para tirar alguma dúvida, fazer alguma sugestão ou crítica, ou até mesmo bater um papo sobre, segue meus contatos.
+Execute `ng e2e` para executar os testes ponta a ponta via uma plataforma de sua escolha. Para usar este comando, você precisa primeiro adicionar um pacote que implemente capacidades de teste ponta a ponta.
 
+## Ajuda adicional
 
-[E-mail](mailto:arthurbarbosa93@gmail.com)    [LinkedIn](https://www.linkedin.com/in/arthurbarbosaoliveira/)
+Para obter mais ajuda sobre o Angular CLI, use `ng help` ou vá para a página [Angular CLI Overview and Command Reference](https://angular.io/cli).
+
+## Docker
+
+Para executar o projeto em um container docker, execute o comando `docker-compose up` na raiz do projeto.
+Este comando irá criar uma imagem docker com o nome `emprestimo-v1` e executar o container com o nome `client-emprestimo` na porta `3000`.
+
+## Informações de contato
+
+Caso tenha alguma dúvida, sugestão ou crítica, entre em contato comigo pelo [email](mailto:anderson.higo2@gmail.com)
+ou pelo [LinkedIn](https://www.linkedin.com/in/andersonhsporto/).
